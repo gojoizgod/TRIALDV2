@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600, "height": 400,
+  "data": {"url": "https://raw.githubusercontent.com/gojoizgod/homeworkkkk10/main/aggregated_data.csv"},
+  "mark": {
+    "type": "circle",
+    "size": 60
+  },
+  "params": [{
+    "name": "industry",
+    "select": {"type": "point", "fields": ["gname"]},
+    "bind": "legend"
+  }],
+  "encoding": {
+    "x": {"field": "iyear", "type": "ordinal"},
+    "y": {
+      "aggregate": "sum", "field": "count"
+      
+    },
+    "color": {
+      "field":"gname",
+      "scale": {"scheme": "dark2"}
+    },
+    "opacity": {
+      "condition": {"param": "industry", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "iyear", "type": "ordinal"},
+      {"field": "count", "type": "quantitative"},
+      {"field": "gname", "type": "nominal"}
+    ]
+  }
+}
+

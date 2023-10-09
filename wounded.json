@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/gojoizgod/homeworkkkk10/main/wounds.csv"
+  },
+  "vconcat": [
+    {
+      "mark": {"type": "area", "color": "#0B666A"},
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal",
+          "title": "Year",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "Year", "tickCount": 10}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "nwound",
+          "type": "quantitative",
+          "title": "Cumulative Wounds"
+        }
+      },
+      "width": 650,
+      "height": 340
+    },
+    {
+      "width": 650,
+      "height": 80,
+      "mark": {"type": "area", "color": "#FE6244"},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal",
+          "axis": {"title": "Year", "tickCount": 10}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "nwound",
+          "type": "quantitative",
+          "axis": {"tickCount": 3, "grid": false},
+          "title": "Cumulative Wounds"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header section with the image and text */
+.header {
+    position: relative; /* Make the parent container relative for positioning */
+    background-color: #f0f0f0; /* Background color for the header */
+}
+
+.header img {
+    width: 100%;
+    height: 400px;
+    opacity: 1; /* Adjust the opacity to your liking */
+}
+
+.header .header-text {
+    position: absolute; /* Position the text absolutely over the image */
+    top: 50%; /* Place the text vertically centered */
+    left: 50%; /* Place the text horizontally centered */
+    transform: translate(-50%, -50%); /* Center the text */
+    text-align: center; /* Center-align the text */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding around the text */
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+/* Style for the main content section */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left-column {
+    flex: 1;
+    /* Style for the left column, adjust as needed */
+}
+
+.right-column {
+    flex: 1;
+    margin-left: 20px; /* Add spacing between columns */
+    /* Style for the right column, adjust as needed */
+}
+
+/* Style for the container of the charts */
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.chart {
+    flex: 1;
+    /* Style for each chart, adjust as needed */
+}
+/* Previous CSS styles remain the same */
+
+/* Style for the text above the three chart container */
+.above-charts {
+    text-align: center;
+    margin: 20px;
+}
+
+.above-charts p {
+    font-size: 16px;
+}
+
+/* Style for the text below the three chart container in two columns */
+.below-charts {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.below-charts .left-column,
+.map-and-text .left-column,
+.chart-and-text .left-column,
+.final-text .left-column {
+    flex: 1;
+    /* Style for the left column text, adjust as needed */
+}
+
+.below-charts .right-column,
+.map-and-text .right-column,
+.chart-and-text .right-column,
+.final-text .right-column {
+    flex: 1;
+    margin-left: 20px;
+    /* Style for the right column text, adjust as needed */
+}
+
+/* Style for the two columns with one chart on the left and text on the right */
+.chart-and-text:nth-child(3n-2) {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the order for alternate sections */
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.chart-and-text:nth-child(3n-2) .left-column {
+    flex: 1;
+    /* Style for the left column, adjust as needed */
+}
+
+.chart-and-text:nth-child(3n-2) .right-column {
+    flex: 1;
+    margin-left: 20px;
+    /* Style for the right column, adjust as needed */
+}
+
+/* Style for the two columns with one chart on the right and text on the left */
+.chart-and-text:nth-child(3n-1) {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the order for alternate sections */
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.chart-and-text:nth-child(3n-1) .left-column {
+    flex: 1;
+    /* Style for the left column text, adjust as needed */
+}
+
+.chart-and-text:nth-child(3n-1) .right-column {
+    flex: 1;
+    margin-left: 20px;
+    /* Style for the right column, adjust as needed */
+}
+
+
+/* Style for the text in two columns */
+.final-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.final-text .left-column,
+.final-text .right-column {
+    flex: 1;
+    /* Style for the text columns, adjust as needed */
+}
+body {
+    background-image: url('https://raw.githack.com/gojoizgod/homeworkkkk10/main/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    /* Add other CSS styles as needed */
+  }

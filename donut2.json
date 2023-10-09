@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent", 
+  "description": "A donut chart for target types with a custom legend for target types",
+  "data": {
+    "values": [
+      {"targtype1_txt": "Airports & Aircraft", "count2": 233},
+      {"targtype1_txt": "Business", "count2": 1889},
+      {"targtype1_txt": "Educational Institution", "count2": 203},
+      {"targtype1_txt": "Government", "count2": 1384},
+      {"targtype1_txt": "Journalists & Media", "count2": 198},
+      {"targtype1_txt": "Military", "count2": 847},
+      {"targtype1_txt": "Police", "count2": 729},
+      {"targtype1_txt": "Private Citizens & Property", "count2": 1155},
+      {"targtype1_txt": "Religious Figures/Institutions", "count2": 70},
+      {"targtype1_txt": "Terrorists/Non-State Militia", "count2": 122},
+      {"targtype1_txt": "Tourists", "count2": 25},
+      {"targtype1_txt": "Transportation", "count2": 146},
+      {"targtype1_txt": "Utilities", "count2": 142}
+    ]
+  },
+  "transform": [
+    {"calculate": "datum.count2 * 100 / 7143  ", "as": "percentage"}
+  ],
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 60,
+            "outerRadius": 100,
+            "stroke": "#fff"
+          },
+          "encoding": {
+            "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+            "color": {"field": "targtype1_txt", "type": "nominal"},
+            "tooltip": [
+              {"field": "targtype1_txt", "type": "nominal", "title": "Target Type"},
+              {"field": "count2", "type": "quantitative", "title": "Count"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 5},
+      "encoding": {
+        "y": {"field": "targtype1_txt", "type": "nominal", "axis": null},
+        "text": {"field": "targtype1_txt", "type": "nominal"},
+        "color": {"field": "targtype1_txt", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {"legend": {"disable": true}}
+}
